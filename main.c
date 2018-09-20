@@ -10,7 +10,7 @@ int is_pivot(float arr [20], int arr_size, int pivot_index)
 {
 	int i = 0, cnt1 = 0,cnt2 = 0;
 	while(i<pivot_index){
-		if(arr[i]<=arr[pivot_index]) cnt1 = 1;
+		if(arr[i] < arr[pivot_index]) cnt1 = 1;
 		i++;
 	}
 	i = arr_size - 1;
@@ -19,9 +19,7 @@ int is_pivot(float arr [20], int arr_size, int pivot_index)
 		if(arr[i] >= arr[pivot_index]) cnt2 = 1;
 		i--;
 	}
-if(pivot_index == 0 &&cnt2 ==1) return 1;
-if(pivot_index == (arr_size - 1) && cnt1 == 1) return 1;
-if(cnt1 == 1&&cnt2 == 1)return 1;
+if(cnt1 == 1 && cnt2 == 1) return 1;
 return 0;	
 }
 
